@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: video-matrix-daily
+spec:
+  schedule: "*/15 * * * *" # every 15 minutes for demo; adjust as needed
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: generator
+            image: jiurihong/video-matrix-runner:latest
+            command: ["python3","/app/scripts/run_generate.py","--sample"]
+          restartPolicy: OnFailure

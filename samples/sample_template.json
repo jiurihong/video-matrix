@@ -1,0 +1,14 @@
+{
+  "template_name": "default",
+  "duration_sec": 60,
+  "segments": [
+    {"type":"hook","duration":3},
+    {"type":"body","duration":45},
+    {"type":"cta","duration":12}
+  ],
+  "visual_style": {
+    "color_palette": "vibrant",
+    "camera": "close_up",
+    "motion": "smooth"
+  }
+}

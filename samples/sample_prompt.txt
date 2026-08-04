@@ -1,0 +1,8 @@
+# Sample LLM prompt for script generation
+
+给定一个主题，生成适合 60 秒竖屏短视频的分镜脚本：
+- 每个镜头 4-20 秒
+- 包含开场钩子（首 3 秒）、主体（信息点）、结尾 CTA
+- 输出 JSON：title, segments[{start,end,text}], tags
+
+示例主题："为什么香蕉会弯曲？"

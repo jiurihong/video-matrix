@@ -1,0 +1,5 @@
+# Dockerfile for compose service
+FROM jiurihong/video-matrix-base:latest
+WORKDIR /app/services
+COPY services/compose_service.py ./
+CMD ["python3","compose_service.py"]

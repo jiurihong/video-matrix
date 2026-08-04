@@ -1,0 +1,5 @@
+# Dockerfile for TTS service
+FROM jiurihong/video-matrix-base:latest
+WORKDIR /app/services
+COPY services/tts_service.py ./
+CMD ["python3","tts_service.py"]

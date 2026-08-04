@@ -1,0 +1,14 @@
+# Byte-compiled / caches
+__pycache__/
+*.pyc
+
+# Model weights / large files
+models/
+weights/
+
+# Temporary / OS files
+*.swp
+*.tmp
+
+# env
+.env

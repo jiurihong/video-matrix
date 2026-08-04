@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-matrix-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: video-matrix-worker
+  template:
+    metadata:
+      labels:
+        app: video-matrix-worker
+    spec:
+      containers:
+      - name: compose
+        image: jiurihong/video-matrix-compose:latest
+        resources:
+          requests:
+            memory: "24Gi"
+            cpu: "4"
+          limits:
+            memory: "60Gi"
+            cpu: "8"
+        volumeMounts:
+        - name: model-weights
+          mountPath: /models
+      volumes:
+      - name: model-weights
+        emptyDir: {}
