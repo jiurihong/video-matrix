@@ -1,0 +1,15 @@
+[Unit]
+Description=Video Matrix Composer Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/video-matrix
+EnvironmentFile=/etc/video-matrix/env
+ExecStart=/opt/video-matrix/.venv/bin/python services/compose_service.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

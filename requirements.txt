@@ -1,2 +1,9 @@
 flask
 requests
+transformers
+huggingface_hub
+TTS
+torch
+bitsandbytes
+accelerate
+diffusers

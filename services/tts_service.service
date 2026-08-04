@@ -1,0 +1,15 @@
+[Unit]
+Description=Video Matrix TTS Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/video-matrix
+EnvironmentFile=/etc/video-matrix/env
+ExecStart=/opt/video-matrix/.venv/bin/python services/tts_service_local.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
