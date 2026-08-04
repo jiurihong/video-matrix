@@ -1,0 +1,15 @@
+[Unit]
+Description=Celery Worker for Video-Matrix
+After=network.target redis-server.service
+
+[Service]
+Type=forking
+User=ubuntu
+WorkingDirectory=/opt/video-matrix
+EnvironmentFile=/etc/video-matrix/env
+ExecStart=/opt/video-matrix/.venv/bin/celery -A services.celery_app.celery_app worker --loglevel=info --concurrency=1 -Q default -D
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

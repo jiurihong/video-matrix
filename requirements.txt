@@ -1,3 +1,6 @@
+celery
+redis
+prometheus_client
 flask
 requests
 transformers
